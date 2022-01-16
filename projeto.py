@@ -78,13 +78,13 @@ def debitaCliente():
                 print("\nO debito não pode ser concluido pois o saldo da conta não pode ser negativo.") # caso não esteja no limite, imprime uma mensagem informando que está fora do limite permitido
                 return # caso o novo saldo não esteja no limite sai da função
 
-            if conta == ("comum" and novo_saldo < 500.00) : # caso a conta seja do tipo comum, verifica se o novo saldo estará no limite permitido
-                print("\nO debito não pode ser concluido pois o saldo da conta não pode ser menor que R$ 500,00.") # caso não esteja no limite, imprime uma mensagem informando que está fora do limite permitido
+            if conta == ("comum" and novo_saldo < -500.00) : # caso a conta seja do tipo comum, verifica se o novo saldo estará no limite permitido
+                print("\nO debito não pode ser concluido pois o saldo da conta não pode ser menor que -R$500,00.") # caso não esteja no limite, imprime uma mensagem informando que está fora do limite permitido
                 return # caso o novo saldo não esteja no limite sai da função
 
 
             if (conta == "plus" and novo_saldo < -5000.00) : # caso a conta seja do tipo plus, verifica se o novo saldo estará no limite permitido
-                print("\nO debito não pode ser concluido pois o saldo da conta não pode ser menor que R$ 5000,00.") # caso não esteja no limite, imprime uma mensagem informando que está fora do limite permitido
+                print("\nO debito não pode ser concluido pois o saldo da conta não pode ser menor que -R$ 5000,00.") # caso não esteja no limite, imprime uma mensagem informando que está fora do limite permitido
                 return # caso o novo saldo não esteja no limite sai da função
            
 
@@ -207,21 +207,24 @@ while True:
     if opcao == 0: #caso o usuario digite 0 o programa sai do loop infinito
         break
 
-    if opcao == 1: #/caso o usuario digite 1 chame a função para cadastrar o cliente
+    elif opcao == 1: #/caso o usuario digite 1 chame a função para cadastrar o cliente
         cadastraCliente()
 
-    if opcao == 2: #caso o usuario digite 2 chame a função para deletar o cliente
+    elif opcao == 2: #caso o usuario digite 2 chame a função para deletar o cliente
         deletaCliente()
 
-    if opcao == 3: #caso o usuario digite 3 chame a função para debitar o cliente
+    elif opcao == 3: #caso o usuario digite 3 chame a função para debitar o cliente
         debitaCliente()
 
-    if opcao == 4: #caso o usuario digite 4 chame a função para depositar para o cliente
+    elif opcao == 4: #caso o usuario digite 4 chame a função para depositar para o cliente
         deposita()
 
-    if opcao == 5: #caso o usuario digite 5 chame a função para mostrar o saldo do cliente
+    elif opcao == 5: #caso o usuario digite 5 chame a função para mostrar o saldo do cliente
         mostraSaldo()
 
-    if opcao == 6: #caso o usuario digite 6 chame a função para mostrar o extrato do cliente
+    elif opcao == 6: #caso o usuario digite 6 chame a função para mostrar o extrato do cliente
         mostraExtrato()
+    
+    else:
+        print("Opção inválida.")
     
